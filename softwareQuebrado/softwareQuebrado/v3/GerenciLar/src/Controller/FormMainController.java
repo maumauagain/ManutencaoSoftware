@@ -47,8 +47,9 @@ public class FormMainController implements Initializable {
         alert.setHeaderText("Você deseja realmente sair?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK)
+        if (result.get() == ButtonType.OK) {
             GerenciLar.exit();
+        }
     }
     
     public void Logoff(){
@@ -57,8 +58,9 @@ public class FormMainController implements Initializable {
         alert.setHeaderText("Você deseja realmente sair?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK)
+        if (result.get() == ButtonType.OK){
             GerenciLar.logoff();
+        }
     }
     
     public void UserPage(){
