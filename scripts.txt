@@ -1,0 +1,76 @@
+CREATE SCHEMA IF NOT EXISTS `gerencilar` DEFAULT CHARACTER SET utf8 ;
+USE `gerencilar` ;
+
+CREATE TABLE IF NOT EXISTS `gerencilar`.`User_Type` (
+  `user_type_id` INT NOT NULL,
+  `user_type_description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`user_type_id`));
+  
+  CREATE TABLE IF NOT EXISTS `gerencilar`.`User` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(45) NOT NULL,
+  `user_password` VARCHAR(45) NOT NULL,
+  `user_rg` INT NOT NULL,
+  `user_email` VARCHAR(45) NOT NULL,
+  `user_phone` INT NOT NULL,
+  `user_type_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`),
+    FOREIGN KEY (`user_type_id`)
+    REFERENCES `gerencilar`.`User_Type` (`user_type_id`)
+	);
+	
+	
+	CREATE TABLE IF NOT EXISTS `gerencilar`.`Bill` (
+  `bill_id` INT NOT NULL,
+  `bill_name` VARCHAR(45) NOT NULL,
+  `bill_value` INT NOT NULL,
+  `bill_exp_date` DATE NOT NULL,
+  `bill_status` INT NOT NULL,
+  PRIMARY KEY (`bill_id`));
+  
+  CREATE TABLE IF NOT EXISTS `gerencilar`.`List` (
+  `list_id` INT NOT NULL,
+  `list_name` VARCHAR(45) NOT NULL,
+  `list_description` VARCHAR(45) NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`list_id`),
+    FOREIGN KEY (`user_id`)
+    REFERENCES `gerencilar`.`User` (`user_id`));
+	
+	CREATE TABLE IF NOT EXISTS `gerencilar`.`User_has_Bill` (
+  `user_has_bill_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `bill_id` INT NOT NULL,
+  `user_has_bill_status` INT NOT NULL,
+  PRIMARY KEY (`user_has_bill_id`),
+    FOREIGN KEY (`user_id`)
+    REFERENCES `gerencilar`.`User` (`user_id`),
+    FOREIGN KEY (`bill_id`)
+    REFERENCES `gerencilar`.`Bill` (`bill_id`));
+	
+	CREATE TABLE IF NOT EXISTS `gerencilar`.`List_has_Items` (
+  `list_has_items_id` INT NOT NULL AUTO_INCREMENT,
+  `list_id` INT NOT NULL,
+  `list_item` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`list_has_items_id`),
+    FOREIGN KEY (`list_id`)
+    REFERENCES `gerencilar`.`List` (`list_id`));
+    
+    CREATE TABLE IF NOT EXISTS `gerencilar`.`Activity` (
+  `act_id` INT NOT NULL AUTO_INCREMENT,
+  `act_name` VARCHAR(45) NOT NULL,
+  `act_description` VARCHAR(45) NULL,
+  `act_start_date` DATE NOT NULL,
+  `act_end_date` DATE NOT NULL,
+  `act_status` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`act_id`),
+    FOREIGN KEY (`user_id`)
+    REFERENCES `gerencilar`.`User` (`user_id`));
+	
+use gerencilar;
+
+insert into user_type values (0, 'admin');
+insert into user_type values (1, 'membro');
+
+insert into user values (1, 'Amauri', '123', '1234', 'amauri', 1234, 0);

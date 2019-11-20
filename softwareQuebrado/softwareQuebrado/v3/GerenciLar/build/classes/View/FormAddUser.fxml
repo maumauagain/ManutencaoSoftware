@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FormAddUserController">
+   <children>
+      <AnchorPane id="AnchorPane" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <AnchorPane id="AnchorPane" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #606060;">
+               <children>
+                  <Pane minHeight="500.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;">
+                     <children>
+                        <Button fx:id="btnUser" layoutX="44.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#UserPage" style="-fx-background-color: #64b5f6; -fx-border-color: #64b5f6;" text="Usuários" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Separator layoutX="8.0" layoutY="72.0" prefHeight="3.0" prefWidth="183.0" style="-fx-background-color: #fff;" />
+                        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="14.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/icon_gray_bill.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnBill" layoutX="45.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#BillPage" style="-fx-background-color: #64b5f6; -fx-border-color: #64b5f6;" text="Contas" textFill="#606060">
+                           <font>
+                              <Font name="Century Gothic" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Separator layoutX="9.0" layoutY="151.0" prefHeight="3.0" prefWidth="183.0" style="-fx-background-color: #fff;" />
+                        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="14.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/icon_gray_activity.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnActivity" layoutX="45.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#ActivityPage" style="-fx-background-color: #64b5f6; -fx-border-color: #64b5f6;" text="Atividades" textFill="#606060">
+                           <font>
+                              <Font name="Century Gothic" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Separator layoutX="9.0" layoutY="229.0" prefHeight="3.0" prefWidth="183.0" style="-fx-background-color: #fff;" />
+                        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="13.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/icon_gray_list.PNG" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnList" layoutX="52.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#ListPage" style="-fx-background-color: #64b5f6; -fx-border-color: #64b5f6;" text="Listas" textFill="#606060">
+                           <font>
+                              <Font name="Century Gothic" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Separator layoutX="8.0" layoutY="309.0" prefHeight="3.0" prefWidth="183.0" style="-fx-background-color: #fff;" />
+                        <Label fx:id="lblSair" layoutX="29.0" layoutY="442.0" onMouseClicked="#Exit" style="-fx-underline: true;" text="Sair" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="lblLogoff" layoutX="118.0" layoutY="442.0" onMouseClicked="#Logoff" style="-fx-underline: true;" text="Logoff" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <ImageView fx:id="img_user" fitHeight="40.0" fitWidth="40.0" layoutX="13.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/icon_user.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="314.0" fitWidth="382.0" layoutX="313.0" layoutY="-110.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/gerencilar_logo%20(4).png" />
+                     </image>
+                  </ImageView>
+                  <Accordion layoutX="348.0" layoutY="158.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="330.0" layoutX="240.0" layoutY="107.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="531.0" />
+                  <Separator layoutX="283.0" layoutY="209.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
+                  <Label layoutX="283.0" layoutY="166.0" style="-fx-font-weight: bold;" text="Nome" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtName" layoutX="283.0" layoutY="185.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <Separator layoutX="283.0" layoutY="278.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
+                  <Label layoutX="283.0" layoutY="235.0" style="-fx-font-weight: bold;" text="E-mail" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtEmail" layoutX="283.0" layoutY="254.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <Separator layoutX="283.0" layoutY="348.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
+                  <Label layoutX="283.0" layoutY="305.0" style="-fx-font-weight: bold;" text="Senha" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPassword" layoutX="283.0" layoutY="324.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <Separator layoutX="527.0" layoutY="209.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
+                  <Label layoutX="527.0" layoutY="166.0" style="-fx-font-weight: bold;" text="Telefone" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPhone" layoutX="527.0" layoutY="185.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <Separator layoutX="527.0" layoutY="278.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
+                  <Label layoutX="527.0" layoutY="235.0" style="-fx-font-weight: bold;" text="RG" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtRg" layoutX="527.0" layoutY="254.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <Group layoutX="525.0" layoutY="340.0">
+                     <children>
+                        <CheckBox fx:id="cbAdm" mnemonicParsing="false" onMouseClicked="#cbAdmYes" text="Administrador" textFill="#6f6f6f">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="cbMember" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#cbMemberYes" text="Membro" textFill="#6f6f6f">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </Group>
+                  <Label layoutX="527.0" layoutY="305.0" style="-fx-font-weight: bold;" text="Tipo de usuário:" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnConcluir" layoutX="663.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#salvar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #29b6f6; -fx-background-radius: 5;" text="Concluir" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="459.0" layoutY="112.0" style="-fx-font-weight: bold;" text="Usuários" textFill="#6f6f6f">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
