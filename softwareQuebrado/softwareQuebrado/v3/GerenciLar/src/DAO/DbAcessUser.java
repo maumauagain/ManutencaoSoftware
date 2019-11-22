@@ -71,6 +71,21 @@ public class DbAcessUser {
 
 	}
         
+    public void apagar(int id) {
+        try {
+            Connection con = conexao();
+            PreparedStatement apagar = con.prepareStatement(APAGAR);
+            apagar.setInt(1, id);
+            apagar.executeUpdate();
+            apagar.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("ERROR APAGANDO CONTA COM ID " + id);
+            System.exit(0);
+        }
+    }
+        
         public List<User> buscarTodas() {
 		List<User> users = new ArrayList<>();
 		try {
