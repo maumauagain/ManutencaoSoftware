@@ -51,6 +51,7 @@ public class DbAcessBill {
 
     }
 
+//Remover contas
     public void apagar(int id) {
         try {
             Connection con = conexao();
