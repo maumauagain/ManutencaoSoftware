@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -124,7 +125,7 @@
                         <Font name="Century Gothic" size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtPassword" layoutX="283.0" layoutY="324.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
+                  <PasswordField fx:id="txtPassword" layoutX="283.0" layoutY="324.0" prefHeight="25.0" prefWidth="200.0" style="-fx-text-inner-color: #6f6f6f; -fx-background-color: white;" />
                   <Separator layoutX="527.0" layoutY="209.0" prefWidth="200.0" style="-fx-background-color: #64b5f6;" />
                   <Label layoutX="527.0" layoutY="166.0" style="-fx-font-weight: bold;" text="Telefone" textFill="#6f6f6f">
                      <font>
