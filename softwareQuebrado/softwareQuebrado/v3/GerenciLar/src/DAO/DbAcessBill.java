@@ -31,6 +31,25 @@ public class DbAcessBill {
     final String FORMATO_DATA = "yyyy/MM/dd";
     final SimpleDateFormat FORMATADOR = new SimpleDateFormat(FORMATO_DATA);
 
+    public void salvar(Bill bill) {
+        try {
+            Connection con = conexao();
+            PreparedStatement salvar = con.prepareStatement(INSERIR);
+                String dateStr = FORMATADOR.format(bill.getExpDate());
+            salvar.setString(1, bill.getName());
+            salvar.setString(2, dateStr);
+                salvar.setInt(3, 0);
+                salvar.setFloat(4, bill.getValue());
+            salvar.executeUpdate();
+            salvar.close();
+            con.close();
+	    } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("ERROR SALVANDO CONTA");
+            System.exit(0);
+            } 
+	}
+
     public void atualizar(Bill bill) {
         try {
             Connection con = conexao();
